@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список задач</title>
+</head>
+<body>
+    <main class="app">
+        <aside class="sidebar" aria-label="Выбор раздела">
+            <h2 class="sidebar-title">Разделы</h2>
+
+            <button type="button" id="all-button" class="sidebar-button">Все задачи</button>
+            <button type="button" id="today-button" class="sidebar-button">Сегодня</button>
+
+            <section class="calendar" aria-label="Календарь">
+                <div class="calendar-header">
+                    <button type="button" id="prev-month" class="calendar-nav-button" aria-label="Предыдущий месяц">‹</button>
+                    <span id="calendar-month" class="calendar-month"></span>
+                    <button type="button" id="next-month" class="calendar-nav-button" aria-label="Следующий месяц">›</button>
+                </div>
+                <div id="calendar-grid" class="calendar-grid"></div>
+            </section>
+        </aside>
+
+        <section class="content">
+            <h1 id="content-title" class="content-title"></h1>
+
+            <form id="task-form" class="task-form">
+                <label for="task-input" class="visually-hidden">Новая задача</label>
+                <input
+                    type="text"
+                    id="task-input"
+                    class="task-input"
+                    placeholder="Что нужно сделать?"
+                    autocomplete="off"
+                    required
+                >
+
+                 <label for="task-date" class="visually-hidden">Дата задачи</label>
+                <input type="date" id="task-date" class="task-date-input" hidden>
+
+                <button type="submit" class="task-add-button">Добавить</button>
+            </form>
+
+            <div id="task-container"></div>
+            <p id="empty-message" class="task-empty" hidden></p>
+        </section>
+    </main>
+
+    <script src="javascript.js"></script>
+</body>
+</html>

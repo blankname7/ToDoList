@@ -1,0 +1,495 @@
+body {
+    margin: 0;
+    max-width: 100%;
+}
+
+.header-block {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 15px 0;
+}
+
+.header-text {
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero-logo {
+    font-size: 190px;
+    max-width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero-button {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 17px;
+    padding: 20px 30px;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.hero-button:active {
+    transform: scale(1.03);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.todo-block {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.todo-title {
+    font-size: 48px;
+    text-align: center;
+}
+
+.todo-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.todo-input {
+    flex: 1;
+    padding: 15px 20px;
+    font-size: 17px;
+    border: 2px solid black;
+    border-radius: 30px;
+    outline: none;
+}
+
+.todo-add-button {
+    padding: 15px 30px;
+    font-size: 17px;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.todo-add-button:active {
+    transform: scale(1.03);
+}
+
+.todo-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.todo-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.todo-text {
+    flex: 1;
+    font-size: 18px;
+    word-break: break-word;
+}
+
+.todo-item.done .todo-text {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.todo-delete-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: 1px solid black;
+    background: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.todo-delete-button:hover {
+    background: black;
+    color: white;
+}
+
+.todo-empty {
+    text-align: center;
+    color: #999;
+}
+
+
+[hidden] { display: none !important; }
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.sidebar {
+    flex: 0 0 30%;
+    box-sizing: border-box;
+    padding: 24px 20px;
+    border-right: 2px solid black;
+    background: #fafafa;
+    border-radius: 20px;
+}
+
+.sidebar-title {
+    margin: 0 0 16px;
+    font-size: 22px;
+}
+
+.sidebar-button {
+    display: block;
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 12px 16px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    border: 2px solid black;
+    border-radius: 30px;
+    background: white;
+    color: black;
+    cursor: pointer;
+}
+
+.sidebar-button:hover,
+.sidebar-button.active {
+    background: black;
+    color: white;
+}
+
+
+.calendar {
+    margin-top: 24px;
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.calendar-month {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.calendar-nav-button {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+    line-height: 1;
+    border: 2px solid black;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+
+.calendar-nav-button:hover {
+    background: black;
+    color: white;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.calendar-weekday {
+    padding: 4px 0;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #777;
+}
+
+.calendar-day {
+    position: relative;
+    aspect-ratio: 1;
+    padding: 0;
+    font-family: inherit;
+    font-size: 14px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.calendar-day:hover {
+    border-color: black;
+}
+
+.calendar-day.today {
+    border-color: black;
+    font-weight: bold;
+}
+
+.calendar-day.selected {
+    background: black;
+    color: white;
+}
+
+.calendar-day.has-tasks::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    margin-left: -2.5px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+
+.content {
+    flex: 1;
+    box-sizing: border-box;
+    padding: 24px 40px;
+}
+
+.content-title {
+    margin: 0 0 24px;
+    font-size: 36px;
+}
+
+.task-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.task-input {
+    flex: 1;
+    min-width: 180px;
+    padding: 15px 20px;
+    font-family: inherit;
+    font-size: 17px;
+    border: 2px solid black;
+    border-radius: 30px;
+    outline: none;
+}
+
+.task-date-input {
+    padding: 15px 20px;
+    font-family: inherit;
+    font-size: 17px;
+    border: 2px solid black;
+    border-radius: 30px;
+    outline: none;
+}
+
+.task-add-button {
+    padding: 15px 30px;
+    font-family: inherit;
+    font-size: 17px;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.task-add-button:active {
+    transform: scale(1.03);
+}
+
+.task-group {
+    margin-bottom: 28px;
+}
+
+.task-group-title {
+    margin: 0 0 6px;
+    font-size: 20px;
+}
+
+.task-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.task-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.task-text {
+    flex: 1;
+    font-size: 18px;
+    word-break: break-word;
+}
+
+.task-item.done .task-text {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.task-delete-button {
+    padding: 8px 16px;
+    font-family: inherit;
+    font-size: 14px;
+    border: 1px solid black;
+    background: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.task-delete-button:hover {
+    background: black;
+    color: white;
+}
+
+.task-empty {
+    color: #999;
+    font-size: 17px;
+}
+
+
+@media (max-width: 800px) {
+    .app {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        flex: none;
+        min-width: 0;
+        width: 100%;
+        padding: calc(16px + env(safe-area-inset-top))
+                 max(16px, env(safe-area-inset-right))
+                 20px
+                 max(16px, env(safe-area-inset-left));
+        border-right: none;
+        border-bottom: 2px solid black;
+    }
+
+    .sidebar-title {
+        margin-bottom: 12px;
+        font-size: 20px;
+    }
+
+    .sidebar-nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .sidebar-button {
+        min-height: 46px;
+        margin-bottom: 5px;
+        padding: 10px 12px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .calendar {
+        margin-top: 16px;
+    }
+
+    .calendar-nav-button {
+        width: 44px;
+        height: 44px;
+        font-size: 22px;
+    }
+
+    .calendar-day {
+        font-size: 15px;
+    }
+
+    .content {
+        padding: 20px
+                 max(16px, env(safe-area-inset-right))
+                 calc(28px + env(safe-area-inset-bottom))
+                 max(16px, env(safe-area-inset-left));
+    }
+
+    .content-title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 800px) {
+    .header-block {
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        margin: 0 16px;
+        padding-top: env(safe-area-inset-top);
+        text-align: center;
+    }
+
+    .header-text {
+        margin: 4px 0;
+        font-size: 12px;
+    }
+
+    .hero-block {
+        padding: 40px 16px;
+    }
+
+    .hero-logo {
+        margin: 0 0 28px;
+        font-size: 40vw;
+        text-align: center;
+    }
+
+    .hero-button {
+        width: 310px;
+
+        padding: 18px 24px;
+        font-size: 16px;
+    }
+}
+
