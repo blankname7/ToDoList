@@ -1,6 +1,23 @@
-body {
-    margin: 0;
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+
+html, body {
+    width: 100%;
     max-width: 100%;
+    overflow-x: hidden;
+}
+
+button {
+    color: black;
+    font-family: inherit;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input {
+    color: black;
 }
 
 .header-block {
@@ -158,12 +175,14 @@ body {
 .app {
     display: flex;
     min-height: 100vh;
+    min-height: 100dvh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
 .sidebar {
     flex: 0 0 30%;
+    min-width: 240px;
     box-sizing: border-box;
     padding: 24px 20px;
     border-right: 2px solid black;
@@ -233,7 +252,8 @@ body {
 
 .calendar-grid {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    min-width: 0;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
     gap: 4px;
 }
 
@@ -286,6 +306,7 @@ body {
 
 .content {
     flex: 1;
+    min-width: 0;
     box-sizing: border-box;
     padding: 24px 40px;
 }
@@ -456,7 +477,84 @@ body {
     }
 
     .content-title {
-        font-size: 28px;
+        font-size: 26px;
+        margin-bottom: 16px;
+        overflow-wrap: anywhere;
+    }
+
+    .task-form {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .task-input,
+    .task-date-input,
+    .task-add-button {
+        flex: none;
+        width: 100%;
+        min-width: 0;
+        min-height: 50px;
+        font-size: 16px;
+    }
+
+    .task-date-input {
+        display: block;
+        max-width: 100%;
+        -webkit-appearance: none;
+        appearance: none;
+        background: white;
+        text-align: left;
+    }
+
+    .task-date-input::-webkit-date-and-time-value {
+        min-width: 0;
+        text-align: left;
+    }
+
+    .task-item {
+        gap: 12px;
+        padding: 12px 0;
+    }
+
+    .task-checkbox {
+        flex: none;
+        width: 24px;
+        height: 24px;
+    }
+
+    .task-text {
+        min-width: 0;
+        font-size: 17px;
+    }
+
+    .task-delete-button {
+        flex: none;
+        min-height: 40px;
+        padding: 8px 14px;
+    }
+
+    .task-group-title {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 380px) {
+    .content-title {
+        font-size: 23px;
+    }
+
+    .calendar-grid {
+        gap: 2px;
+    }
+
+    .calendar-day {
+        font-size: 14px;
+    }
+
+    .task-delete-button {
+        padding: 8px 10px;
+        font-size: 13px;
     }
 }
 
@@ -472,7 +570,7 @@ body {
 
     .header-text {
         margin: 4px 0;
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .hero-block {
@@ -487,7 +585,6 @@ body {
 
     .hero-button {
         width: 310px;
-
         padding: 18px 24px;
         font-size: 16px;
     }
