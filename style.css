@@ -4,7 +4,6 @@ html { -webkit-text-size-adjust: 100%; }
 
 
 html, body {
-    width: 100%;
     max-width: 100%;
     overflow-x: hidden;
 }
@@ -564,7 +563,6 @@ input {
         align-items: center;
         gap: 4px;
         margin: 0 16px;
-        padding-top: env(safe-area-inset-top);
         text-align: center;
     }
 
@@ -574,17 +572,19 @@ input {
     }
 
     .hero-block {
-        padding: 40px 16px;
+        padding: 24px 16px 40px;
     }
 
     .hero-logo {
         margin: 0 0 28px;
-        font-size: 40vw;
+        font-size: 35vw;
         text-align: center;
+        overflow-wrap: anywhere;
     }
 
     .hero-button {
-        width: 310px;
+        width: 100%;
+        max-width: 360px;
         padding: 18px 24px;
         font-size: 16px;
     }
