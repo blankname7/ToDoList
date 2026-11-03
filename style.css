@@ -576,8 +576,8 @@ input {
     }
 
     .hero-logo {
-        margin: 0 0 28px;
-        font-size: 30vw;
+        margin: 300px 0 250px;
+        font-size: 12vw;
         text-align: center;
         overflow-wrap: anywhere;
     }
